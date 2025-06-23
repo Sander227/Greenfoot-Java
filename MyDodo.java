@@ -97,8 +97,12 @@ public class MyDodo extends Dodo
     
     public void printSurpriseEggs(){
         List<SurpriseEgg> surpriseEggList = SurpriseEgg.generateListOfSurpriseEggs(10, getWorld());
+        
+        int totaal = 0;
         for (Egg egg : surpriseEggList) {
-            System.out.println(egg.getY() + ", " + egg.getX());
+            System.out.println(egg.getY() + ", " + egg.getX() + ", " + egg.getValue());
+            totaal += egg.getValue();
         }
+        System.out.println("Het gemiddelde is: " + totaal / (double) surpriseEggList.size());
     }
 }
